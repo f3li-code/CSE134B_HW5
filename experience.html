@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Fangzhong Li's Resume</title>
+    <script>
+        const paintCanvas = () => {
+            let canvas = document.getElementById("myCanvas");
+            let ctx = canvas.getContext("2d");
+            ctx.fillStyle = "#FF0000";
+            ctx.fillRect(0, 0, 80, 80);
+        };
+        window.onload = paintCanvas;
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1>Work Experience Page</h1>
+    </header>
+    <main>
+        <section>
+            <h2>This is a canvas</h2>
+            <canvas id="myCanvas">
+                Your browser does not support the canvas tag.
+            </canvas>
+        </section>
+
+        <div id="MathML">
+            <math display="block">
+                <mrow>
+                    <mi>E</mi>
+                    <mo>=</mo>
+                    <mi>m</mi>
+                    <msup>
+                        <mi>c</mi>
+                        <mn>2</mn>
+                    </msup>
+                </mrow>
+            </math>
+        </div>
+    </main>
+</body>
+
+</html>

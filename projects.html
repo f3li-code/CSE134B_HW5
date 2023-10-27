@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fangzhong Li's Resume</title>
+</head>
+<body>
+    <header>
+        <h1>Projects Page</h1>
+    </header>
+    <main>
+        <ul>
+            <li>
+                <h3>Project 1</h3>
+                <p>Demo with iframe</p>
+                <iframe width="420" height="320"
+                    src="https://www.youtube.com/embed/tgbNymZ7vqY">
+                </iframe>
+            </li>
+            <li>
+                <h3>Project 2</h3>
+                <p>Demo with video</p>
+                <video width="420" height="320" controls>
+                    <source src="./Assets/dummyVideo.mov" type="video/mp4">
+                    <source src="./Assets/dummyVideo.mov" type="video/ogg">
+                    Your browser does not support the video tag.
+                </video>
+                  
+            </li>
+            <li>
+                <h3>Project 3</h3>
+                <p>Demo with <code>&lt;picture&gt;</code> in <code>&lt;figure&gt;</code></p>
+                <figure>
+                    <picture>
+                        <source type="image/avif" srcset="./Assets/dummyScreenShot.avif">
+                        <source type="image/webp" srcset="./Assets/dummyScreenShot.webp">
+                        <img src="./Assets/dummyScreenShot.png" alt="placeholder screenshot" width="200" height="200">
+                    </picture>
+                    <figcaption>figure caption: Demo pic for project 3</figcaption>
+                </figure>
+            </li>
+            <li>
+                <h3>Project 4</h3>
+                <p>Demo with Audio</p>
+                <audio controls>
+                    <source src="./Assets/dummyVideo.mov" type="audio/ogg">
+                    <source src="./Assets/dummyVideo.mov" type="audio/mpeg">
+                    Your browser does not support the audio tag.
+                  </audio>
+            </li>
+        </ul>
+    </main>
+</body>
+</html>

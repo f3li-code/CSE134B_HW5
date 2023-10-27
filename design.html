@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fangzhong Li's Resume</title>
+    <script>
+        const f = () => {
+            const tags_list = ['html', 'head', 'title', 'meta', 'link', 'body', 'main', 'h1', 'h2', 'h3', 'p', 'section', 'header', 'footer', 'aside', 'nav', 'div', 'span', 'br', 'b', 'i', 'strong', 'em', 'code', 'pre', 'hr', 'a', 'img', 'picture', 'iframe', 'audio', 'video', 'source', 'ul', 'ol', 'optgroup', 'li', 'form', 'label', 'fieldset', 'legend', 'input', 'textarea', 'datalist', 'select', 'option', 'details', 'summary', 'button', 'template', 'table', 'tr', 'td', 'th', 'caption', 'col', 'colgroup', 'figure', 'figcaption', 'script', 'style', 'canvas', 'svg'];
+            let tagsSet = new Set(tags_list);
+            const li_list = document.getElementById('used_tags').getElementsByTagName("li");
+            for (let li of li_list) {
+                tagsSet.delete(li.innerHTML);
+            }
+            // console.log(tagsSet);
+            let num_tags = document.getElementById('num_tags');
+            num_tags.innerHTML = li_list.length;
+        }   
+        window.onload = f;
+    </script>
+</head>
+<body>
+    <h1>This is the Design Page</h1>
+    <h2>This page is just acts as a notebook</h2>
+    <main>
+        <section>
+            <h2>HW2 short answers</h2>
+            <p>
+                1. Technical requirements -  
+                some details (doesn't need to be super long) about what you plan on doing in execution, where it will be hosted, etc.  
+                Technical requirements might include things like technologies possible to use, target browser and device profiles, page delivery targets in bytes, etc. 
+                We're not looking for specific things or for you to know all of the answers, just to have a little bit of thought put in. 
+                Feel free to look around at other sites similar to yours to see how they achieved it.  (6pts)
+            </p> 
+            <p>
+                Set up the necessary pages for a resume site. Fulfill HW2's tag requirements by spreading the tags out on different pages.<br>
+                Deploy with netlify.<br>
+                HW2's site content is mostly text, unless need to demonstrate certain media tags with video/audio/images, or canvas, mathml, etc.<br>
+                Strictly limit styles and scripts<br>
+            </p>
+            <p>
+                2. Content requirements - details what type of content you will need to gather or write.  
+                You may also discuss any media assets you need.  You will not need all this content on the initial build of phase 1.  
+                However, by phase 2 (HW3), most content should be in place, so plan accordingly.   (6pts)
+            </p>
+            <p>
+                Media: profile photo, pictures/videos of project demo (all dummy placeholders for HW2)<br>
+                Document: description of education, work experience, and each project. (mostly placeholders in HW2)
+            </p>
+            <p><strong>Extra Credit Items:</strong><br></p>
+            <ol>
+                <li>
+                    Use MathML to write the formula for Einstein's famous formula E=mc2 (5 points)<br>
+                    <a href="./experience.html">HERE</a>
+                </li>
+                <li>
+                    Despite being in the HTML specification since a long time, developers could not make use of it until recently. Explain why that might be the case (Hint: Check the caniuse.com page for MathML!) (5 points)<br>
+                    MathML is not supported by Chrome & other big browsers for a LONG time!!
+                </li>
+                <li>
+                    Use a meta tags to provide additional information search engines or social media websites. (5 points)
+                </li>
+            </ol>
+        </section>
+        <section>
+            <h2>HW 2 HTML Tag Requirements</h2>
+            <p>This site needs the following html tags</p>
+            <p>html, head, title, meta, link, body, main, h1, h2, h3, p, section, header, footer, aside, nav, div, span, br, b, i, strong, em, code, pre, hr, a, img, picture, iframe, audio, video, source, ul, ol, optgroup, li, form, label, fieldset, legend, input, textarea, datalist, select, option, details, summary, button, template, table, tr, td, th, caption, col, colgroup, figure, figcaption,   (63 tags * 2 = 126pts)</p>
+            <p>script*, style*, canvas*, svg*,</p>
+            <p>
+                script tags: use it for Canvas tag
+                style tags: no styling allowed, only add a border
+                canvas tags: use a few lines of JavaScript
+                svg tags: To demonstrate you can use SVG within an HTML page, demonstrate this element within inline tag usage. 
+            </p>
+
+            <h2>Number of tags needed to use: 63</h2>
+            <h2>Number of tags used so far: <span id="num_tags">hello</span></h2>
+            <ul id="used_tags">
+                <li>html</li>
+                <li>head</li>
+                <li>title</li>
+                <li>link</li>
+                <li>script</li>
+                <li>style</li>
+                <li>meta</li>
+                <li>body</li>
+                <li>nav</li>
+                <li>ul</li>
+                <li>ol</li>
+                <li>li</li>
+                <li>a</li>
+                <li>header</li>
+                <li>footer</li>
+                <li>h1</li>
+                <li>h2</li>
+                <li>h3</li>
+                <li>main</li>
+                <li>section</li>
+                <li>aside</li>
+                <li>p</li>
+                <li>b</li>
+                <li>strong</li>
+                <li>i</li>
+                <li>em</li>
+                <li>svg</li>
+                <li>span</li>
+                <li>br</li>
+                <li>hr</li>
+                <li>details</li>
+                <li>summary</li>
+                <li>table</li>
+                <li>caption</li>
+                <li>colgroup</li>
+                <li>col</li>
+                <li>tr</li>
+                <li>td</li>
+                <li>code</li>
+                <li>th</li>
+                <li>iframe</li>
+                <li>video</li>
+                <li>audio</li>
+                <li>picture</li>
+                <li>img</li>
+                <li>source</li>
+                <li>pre</li>
+                <li>form</li>
+                <li>fieldset</li>
+                <li>legend</li>
+                <li>label</li>
+                <li>input</li>
+                <li>select</li>
+                <li>optgroup</li>
+                <li>option</li>
+                <li>datalist</li>
+                <li>textarea</li>
+                <li>button</li>
+                <li>template</li>
+                <li>figure</li>
+                <li>figcaption</li>
+                <li>canvas</li>
+                <li>div</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Site Map</h2>
+            <p>Home: un/ordered lists, table related tags</p>
+            <p>Education: form related tags</p>
+            <p>Work Experience: canvas, MathML</p>
+            <p>Projects: media related tags</p>
+            <p>design: not a real part of the site</p>
+            <img src="./Design/sitemap.png" width="300" height="300" alt="site map">
+        </section>
+        <section>
+            <h2>Wireframes</h2>
+            <p>index.html</p> 
+            <img src="./Design/home_wireframe.png" width="300" height="300" alt="home wireframe">
+            <p>education.html</p>
+            <img src="./Design/education_wireframe.png" width="300" height="300" alt="education wireframe">
+            <p>experience.html</p>
+            <img src="./Design/experience_wireframe.png" width="300" height="300" alt="experience wireframe">
+            <p>projects.html</p>
+            <img src="./Design/projects_wireframe.png" width="300" height="300" alt="projects wireframe">
+        </section>
+</main>
+</body>
+</html>

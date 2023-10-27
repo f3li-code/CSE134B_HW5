@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fangzhong Li's Resume</title>
+</head>
+<body>
+    <header>
+        <h1>Education Page</h1>
+    </header>
+    <main>
+        <template>
+            <h2>This section is just to use the form related tags.</h2>
+        </template>
+        <pre>This           page is just to display tags       .</pre>
+        
+        <form action="./education.html">
+            <fieldset>
+                <legend>Personal Information:</legend>
+                <label for="first_name">First Name:</label>
+                <input type="text" id="first_name" name="first_name" placeholder="First Name"  autofocus="autofocus">
+                <label for="last_name">Last Name:</label>
+                <input type="text" id="last_name" name="last_name" placeholder="Last Name">
+            </fieldset>
+            <fieldset>
+                <legend>School Information:</legend>
+                <label for="school_name">School Name:</label>
+                <input type="text" id="school_name" name="school_name" placeholder="School"><br><br>
+                <label for="graduation_date">Graduation Date:</label>
+                <select id="graduation_date" name="graduation_date">
+                    <optgroup label="2023">
+                        <option value="Winter 2023">Winter</option>
+                        <option value="Spring 2023">Spring</option>
+                        <option value="Fall 2023">Fall</option>
+                    </optgroup>
+                    <optgroup label="2024">
+                        <option value="Winter 2024">Winter</option>
+                        <option value="Spring 2024">Spring</option>
+                        <option value="Fall 2024">Fall</option>
+                    </optgroup>
+                    <optgroup label="2025">
+                        <option value="Winter 2025">Winter</option>
+                        <option value="Spring 2025">Spring</option>
+                        <option value="Fall 2025">Fall</option>
+                    </optgroup>
+                </select><br><br>
+                
+                <label for="gpa">GPA:</label>
+                <input list="GPAs" name="gpa" id="gpa">
+                <datalist id="GPAs">
+                    <option value="2.5">
+                    <option value="3.0">
+                    <option value="3.5">
+                    <option value="3.8">
+                    <option value="4.0">
+                </datalist>
+            </fieldset>
+            <fieldset>
+                <legend>Self Introduction:</legend>
+                <textarea id="self_intro" name="self_intro"></textarea>
+            </fieldset>
+            <button>Dummy Button</button>
+            <input type="submit" value="Submit Input">
+        </form>
+    </main>
+</body>
+</html>
