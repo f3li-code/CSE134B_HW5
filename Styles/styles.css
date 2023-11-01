@@ -1,0 +1,183 @@
+@import url('./vars.css');
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100dvw;
+    height: 100dvh;
+    box-sizing: border-box;
+    background-color: var(--background-color, #333);
+    font-family: var(--font-family, 'Helvetica Neue', Arial, sans-serif);
+    line-height: var(--line-height, 1.6);
+    color: var(--font-color, #f7f7f7);
+    display: flex;
+    flex-direction: column;
+    font-size: var(--step-0);
+}
+
+
+h1 {
+    color: var(--heading-color, #f7f7f7);
+    font-size: var(--heading-size, 2em);
+}
+
+h2 {
+    color: var(--subheading-color, #ccc);
+    font-size: var(--subheading-size, 1.5em);
+}
+
+header h2 {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    width: 50%;
+}
+
+#stickyHeader {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1em 0;
+    box-shadow: var(--box-shadow, 1px 1px 1px 1px rgba(0, 0, 0, 0.5));
+    background-color: inherit;
+    /* height: auto; */
+}
+
+#navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+header + main {
+    margin: 0 20%;
+    flex: 1;
+}
+
+ul li {
+    display: inline-block;
+    padding: 1%;
+    margin: 1%;
+}
+
+ul li a {
+    text-decoration: none;
+    color: inherit;
+    
+}
+
+ul li a:hover,
+ul li a:active {
+    text-decoration: underline;
+}
+
+#navbar nav ul li a {
+    transition: all 0.2s ease;
+}
+#navbar nav ul li a:hover {
+    /* font-size: calc(1em + 1px); */
+    font-weight: bold;
+}
+
+#navbar nav {
+    width: 50%;
+}
+
+nav ul {
+    list-style: none;
+    text-align: right;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+#summary {
+    margin-top: 2em;
+    text-align: center;
+}
+
+section ul {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section ul li {
+    display: inline-block;
+}
+
+section ul li a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+logo-container {
+    display: inline-block;
+    width: var(--svg-container-width, 1.5em);
+    height: var(--svg-container-height, 1.5em);
+    
+}
+
+logo-container img {
+    width: 100%;
+    height: 100%;
+    filter: invert();
+    /* background: white; */
+}
+
+/* Adjust font sizes based on viewport width */
+@media screen and (max-width: 600px) {
+    body {
+        font-size: var(--step--2);
+    }
+}
+
+@media screen and (min-width: 601px) and (max-width: 768px) {
+    body {
+        font-size: var(--step--1);
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 992px) {
+    body {
+        font-size: var(--step-0);
+    }
+}
+
+@media screen and (min-width: 993px) and (max-width: 1200px) {
+    body {
+        font-size: var(--step-1);
+    }
+}
+
+@media screen and (min-width: 1201px) and (max-width: 1440px) {
+    body {
+        font-size: var(--step-2);
+    }
+}
+
+@media screen and (min-width: 1441px) and (max-width: 1680px) {
+    body {
+        font-size: var(--step-3);
+    }
+}
+
+@media screen and (min-width: 1681px) and (max-width: 1920px) {
+    body {
+        font-size: var(--step-4);
+    }
+}
+
+@media screen and (min-width: 1921px) {
+    body {
+        font-size: var(--step-5);
+    }
+}

@@ -1,0 +1,28 @@
+#myCanvas {
+    width: 80px;
+    height: 80px;
+    animation: slide 2s infinite alternate;
+}
+
+#MathML {
+    transition: background-color, 1s;
+}
+#MathML:hover {
+    background-color: white;
+}
+
+/* Example Animation */
+@keyframes slide {
+    0% { 
+        transform: translateX(0) rotate(0deg); 
+    }
+    40% {
+        transform: translateX(250px) rotate(90deg) scaleX(2) scaleY(2); 
+    }
+    60% {
+        transform: translateX(250px) rotate(90deg) scaleX(2) scaleY(2); 
+    }
+    100% { 
+        transform: translateX(0) rotate(180deg);
+    }
+}

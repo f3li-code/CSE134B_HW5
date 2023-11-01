@@ -1,0 +1,12 @@
+#tableList {
+    display: flex;
+    justify-content: space-around;
+}
+
+#tableList table tr {
+    height: 2em;
+}
+
+#tableList table td {
+    padding: 0 1em;
+}

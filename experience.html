@@ -7,19 +7,35 @@
     <script>
         const paintCanvas = () => {
             let canvas = document.getElementById("myCanvas");
+            const canvasWidth = canvas.width;
+            const canvasHeight = canvas.height;
             let ctx = canvas.getContext("2d");
             ctx.fillStyle = "#FF0000";
-            ctx.fillRect(0, 0, 80, 80);
+            ctx.fillRect(0, 0, canvasWidth, canvasHeight);
         };
         window.onload = paintCanvas;
     </script>
+    <link rel="stylesheet" href="./Styles/styles.css">
+    <link rel="stylesheet" href="./Styles/experience.css">
 </head>
 
 <body>
-    <header>
-        <h1>Work Experience Page</h1>
+    <header id="stickyHeader">
+        <div id="navbar">
+        <h2>Fangzhong Li HW 3 CSE134B FA23</h2>
+        <nav>
+            <ul>
+                <li><a href="./index.html">HOME</a></li>
+                <li><a href="./education.html">EDUCATION</a></li>
+                <li><a href="./experience.html">WORK EXPERIENCE</a></li>
+                <li><a href="./projects.html">PROJECTS</a></li>
+                <!-- <li><a href="./design.html">design (not a real part of the site)</a></li> -->
+            </ul>
+        </nav>
+        </div>
     </header>
     <main>
+        <h1>Work Experience Page</h1>
         <section>
             <h2>This is a canvas</h2>
             <canvas id="myCanvas">
@@ -27,7 +43,9 @@
             </canvas>
         </section>
 
-        <div id="MathML">
+        
+        <div id="MathML" style="text-align: center; border: 1px solid black">
+            <p>Hover Me :)</p>
             <math display="block">
                 <mrow>
                     <mi>E</mi>

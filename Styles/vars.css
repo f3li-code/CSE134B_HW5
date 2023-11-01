@@ -1,0 +1,23 @@
+:root {
+	--background-color : #333;
+	--heading-color :    #f7f7f7;
+	--heading-size :     2em;
+	--subheading-color : #ccc;
+	--subheading-size :  1.5em;
+	--font-color : 		 #f7f7f7;
+	--body-size :        1.25em;
+	--svg-container-width : 1.5em;
+	--svg-container-height : 1.5em;
+	--line-height: 1.6;
+	--font-family: 'Helvetica Neue', Arial, sans-serif;
+	--box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.5);
+
+    --step--2: clamp(0.5rem, 0.6rem + 0.0326vw, 0.6rem);
+    --step--1: clamp(0.625rem, 0.7rem + 0.1087vw, 0.75rem);
+    --step-0: clamp(0.75rem, 0.85rem + 0.2174vw, 0.9rem);
+    --step-1: clamp(0.9rem, 1rem + 0.3696vw, 1.1rem);
+    --step-2: clamp(1.1rem, 1.2rem + 0.5793vw, 1.3rem);
+    --step-3: clamp(1.3rem, 1.4rem + 0.8652vw, 1.5rem);
+    --step-4: clamp(1.55rem, 1.6rem + 1.2511vw, 1.75rem);
+    --step-5: clamp(1.85rem, 1.9rem + 1.7663vw, 2.1rem);
+}
