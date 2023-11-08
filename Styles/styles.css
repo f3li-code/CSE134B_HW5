@@ -13,6 +13,7 @@ body {
     display: flex;
     flex-direction: column;
     font-size: var(--step-0);
+    transition: all 0.2s ease;
 }
 
 
@@ -33,58 +34,9 @@ header h2 {
     width: 50%;
 }
 
-#stickyHeader {
-    position: sticky;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 1em 0;
-    box-shadow: var(--box-shadow, 1px 1px 1px 1px rgba(0, 0, 0, 0.5));
-    background-color: inherit;
-    /* height: auto; */
-}
-
-#navbar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-}
-
 header + main {
     margin: 0 20%;
     flex: 1;
-}
-
-ul li {
-    display: inline-block;
-    padding: 1%;
-    margin: 1%;
-}
-
-ul li a {
-    text-decoration: none;
-    color: inherit;
-    
-}
-
-ul li a:hover,
-ul li a:active {
-    text-decoration: underline;
-}
-
-#navbar nav ul li a {
-    transition: all 0.2s ease;
-}
-#navbar nav ul li a:hover {
-    /* font-size: calc(1em + 1px); */
-    font-weight: bold;
-}
-
-#navbar nav {
-    width: 50%;
 }
 
 nav ul {
@@ -95,9 +47,22 @@ nav ul {
     width: 100%;
 }
 
-#summary {
-    margin-top: 2em;
-    text-align: center;
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul li {
+    display: inline-block;
+    padding: 1%;
+    margin: 1%;
+}
+
+ul li a {
+    &:hover,
+    &:active {
+        text-decoration: underline;
+    }
 }
 
 section ul {
@@ -119,6 +84,38 @@ section ul li a{
     align-items: center;
 }
 
+#stickyHeader {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1em 0;
+    box-shadow: var(--box-shadow, 1px 1px 1px 1px rgba(0, 0, 0, 0.5));
+    background-color: inherit;
+}
+
+#navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+#navbar nav {
+    width: 50%;
+}
+
+#navbar nav ul li a:hover {
+    font-weight: bold;
+}
+
+#summary {
+    margin-top: 2em;
+    text-align: center;
+}
+
+
 logo-container {
     display: inline-block;
     width: var(--svg-container-width, 1.5em);
@@ -130,7 +127,6 @@ logo-container img {
     width: 100%;
     height: 100%;
     filter: invert();
-    /* background: white; */
 }
 
 /* Adjust font sizes based on viewport width */

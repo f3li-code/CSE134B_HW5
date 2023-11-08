@@ -5,10 +5,20 @@
 }
 
 #MathML {
+    text-align: center; 
+    border: 1px solid black;
+    margin-top: 5rem;
     transition: background-color, 1s;
+    background-color: color-mix(in srgb, #34c9eb 75%, black);
 }
+
+p:has(span) {
+    border: 1px solid black;
+}
+
 #MathML:hover {
-    background-color: white;
+    background-color: color(display-p3 0.8 0.2 0.4);;
+    cursor: pointer;
 }
 
 /* Example Animation */

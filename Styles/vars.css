@@ -9,7 +9,7 @@
 	--svg-container-width : 1.5em;
 	--svg-container-height : 1.5em;
 	--line-height: 1.6;
-	--font-family: 'Helvetica Neue', Arial, sans-serif;
+	--font-family: 'Palatino', 'Helvetica Neue', Arial, sans-serif;
 	--box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.5);
 
     --step--2: clamp(0.5rem, 0.6rem + 0.0326vw, 0.6rem);

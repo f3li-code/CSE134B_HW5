@@ -4,11 +4,35 @@
     <meta charset="UTF-8">
     <title>Fangzhong Li's Resume</title>
     <link rel="stylesheet" href="./Styles/styles.css">
+    <!-- <link rel="stylesheet" href="./Styles/projects.css"> -->
+    <style>
+        ul#projectList li {
+            display: block;
+        }
+
+        li figure{
+            margin: 0;
+        }
+
+        li figure picture {
+            display: block;
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+            border: 2px solid #f7f7f7;
+        }
+        picture img {
+            object-fit: cover;
+            object-position: center;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
 </head>
 <body>
     <header id="stickyHeader">
         <div id="navbar">
-        <h2>Fangzhong Li HW 3 CSE134B FA23</h2>
+        <h2><a href="./index.html">Fangzhong Li HW 3 CSE134B FA23</a></h2>
         <nav>
             <ul>
                 <li><a href="./index.html">HOME</a></li>
@@ -22,44 +46,50 @@
     </header>
     <main>
         <h1>Projects Page</h1>
-        <ul>
+        <ul id="projectList">
             <li>
                 <h3>Project 1</h3>
-                <p>Demo with iframe</p>
-                <iframe width="420" height="320"
-                    src="https://www.youtube.com/embed/tgbNymZ7vqY">
-                </iframe>
+                <figure>
+                    <figcaption>Demo pic for project 1</figcaption>
+                    <picture>
+                        <source srcset="./Assets/dummyScreenShot.avif" type="image/avif">
+                        <source srcset="./Assets/dummyScreenShot.webp" type="image/webp">
+                        <img src="./Assets/dummyScreenShot.jpg" alt="project 1 place holder">
+                    </picture>
+                </figure>
             </li>
             <li>
                 <h3>Project 2</h3>
-                <p>Demo with video</p>
-                <video width="420" height="320" controls>
-                    <source src="./Assets/dummyVideo.mov" type="video/mp4">
-                    <source src="./Assets/dummyVideo.mov" type="video/ogg">
-                    Your browser does not support the video tag.
-                </video>
-                  
-            </li>
-            <li>
-                <h3>Project 3</h3>
-                <p>Demo with <code>&lt;picture&gt;</code> in <code>&lt;figure&gt;</code></p>
                 <figure>
+                    <figcaption>Demo for project 2</figcaption>
                     <picture>
                         <source type="image/avif" srcset="./Assets/dummyScreenShot.avif">
                         <source type="image/webp" srcset="./Assets/dummyScreenShot.webp">
-                        <img src="./Assets/dummyScreenShot.png" alt="placeholder screenshot" width="200" height="200">
+                        <img src="./Assets/dummyScreenShot.jpg" alt="project 2 place holder">
                     </picture>
-                    <figcaption>figure caption: Demo pic for project 3</figcaption>
+                </figure>
+            </li>
+            <li>
+                <h3>Project 3</h3>
+                <figure>
+                    <figcaption>Demo for project 3</figcaption>
+                    <picture>
+                        <source type="image/avif" srcset="./Assets/dummyScreenShot.avif">
+                        <source type="image/webp" srcset="./Assets/dummyScreenShot.webp">
+                        <img src="./Assets/dummyScreenShot.jpg" alt="project 3 place holder">
+                    </picture>
                 </figure>
             </li>
             <li>
                 <h3>Project 4</h3>
-                <p>Demo with Audio</p>
-                <audio controls>
-                    <source src="./Assets/dummyVideo.mov" type="audio/ogg">
-                    <source src="./Assets/dummyVideo.mov" type="audio/mpeg">
-                    Your browser does not support the audio tag.
-                  </audio>
+                <figure>
+                    <figcaption>Demo pic for project 4</figcaption>
+                    <picture>
+                        <source type="image/avif" srcset="./Assets/dummyScreenShot.avif">
+                        <source type="image/webp" srcset="./Assets/dummyScreenShot.webp">
+                        <img src="./Assets/dummyScreenShot.jpg" alt="project 4 place holder">
+                    </picture>
+                </figure>
             </li>
         </ul>
     </main>
