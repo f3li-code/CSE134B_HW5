@@ -38,7 +38,7 @@ const checkTextArea = (e) => {
 		input.length >= MAX_LEN + 1
 	) {
 		flashTextAreaErrorMsg();
-		textArea.setCustomValidity(ERROR_MAX_LEN);
+		// textArea.setCustomValidity(ERROR_MAX_LEN);
 		e.target.value = comments;
 		return;
 	}
