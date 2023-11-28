@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Fangzhong Li's Resume</title>
+		<link rel="stylesheet" href="./Styles/styles.css" />
+		<link rel="stylesheet" href="./Styles/form-js.css" />
+	</head>
+	<body>
+		<header id="stickyHeader">
+			<div id="navbar">
+				<h2>
+					<a href="./index.html">Fangzhong Li HW 4 CSE134B FA23</a>
+				</h2>
+				<nav>
+					<ul>
+						<li><a href="./index.html">HOME</a></li>
+						<li><a href="./form-no-js.html">Form no JS</a></li>
+						<li><a href="./form-js.html">Form with JS</a></li>
+						<li><a href="./projects.html">PROJECTS</a></li>
+						<!-- <li><a href="./design.html">design (not a real part of the site)</a></li> -->
+					</ul>
+				</nav>
+			</div>
+		</header>
+		<main>
+			<h1>Form-no-JS Page</h1>
+			<!-- <button id="toggle-style">toggle-style</button> -->
+
+			<form action="https://httpbin.org/post" method="post">
+				<fieldset>
+					<div class="form-input required">
+						<label for="name">Name: </label>
+						<input
+							type="text"
+							id="name"
+							name="name"
+							placeholder="Name: "
+							required
+						/>
+						<div class="output">
+							<output class="input-error"
+								>Error: Please Input a Valid Name :></output
+							>
+							<output class="input-info"></output>
+						</div>
+					</div>
+					<div class="form-input required">
+						<label for="email">Email: </label>
+						<input
+							type="email"
+							id="email"
+							name="email"
+							placeholder="Email: "
+							required
+						/>
+						<div class="output">
+							<output class="input-error"
+								>Error: Please input a valid Email :></output
+							>
+							<output class="input-info"></output>
+						</div>
+					</div>
+				</fieldset>
+				<div class="form-input required">
+					<!-- Make sure all the fields are required, 
+						that you are getting an appropriate email, 
+						and that your comments field is a reasonable length 
+						and does not include non-typical characters. -->
+					<label for="comments">Comments: </label>
+					<textarea
+						id="comments"
+						name="comments"
+						rows="3"
+						maxlength="51"
+						required
+					></textarea>
+					<div class="output">
+						<output class="input-error"
+							>Error: Please Enter Less Than 50 Characters and
+							Avoid Special Characters.</output
+						>
+						<output class="input-info">Characters Left: 50</output>
+					</div>
+				</div>
+
+				<input type="hidden" name="possible_bot" value="true" />
+				<input type="hidden" id="form-errors" name="errors" value="" />
+				<button type="submit" id="submit">Submit</button>
+			</form>
+		</main>
+	</body>
+	<script src="form.js"></script>
+</html>

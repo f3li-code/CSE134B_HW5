@@ -1,0 +1,8 @@
+POST /post HTTP/1.1
+
+Host : httpbin.org
+Content-Type : application/x-www-form-urlencoded
+Content-Length: 84
+User-Agent : Chrome
+
+name=Fangzhong+Li&email=f3li%40ucsd.edu&comments=This+is+a+test%21&possible_bot=true

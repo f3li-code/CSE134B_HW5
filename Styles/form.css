@@ -1,0 +1,76 @@
+@import url('styles.css');
+form {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	border: 1px solid gray;
+	padding: 5px;
+	border-radius: 5px;
+	box-sizing: border-box;
+}
+
+form fieldset {
+	display: flex;
+	border: none;
+	margin: 0;
+	padding: 0;
+}
+
+label,
+input,
+textarea {
+	display: block;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+input[type='submit'] {
+	float: right;
+}
+
+output {
+	display: inline;
+}
+button {
+	margin-top: 1em;
+}
+
+.form-input {
+	width: 100%;
+}
+
+form fieldset .form-input:first-child {
+	margin-right: 2px;
+}
+form fieldset .form-input:nth-child(2) {
+	margin-left: 2px;
+}
+
+.output {
+	font-size: calc(1em - 3px);
+}
+
+output.input-error {
+	color: var(--error-color);
+	/* visibility: hidden; */
+}
+
+output.input-info {
+	float: right;
+}
+
+.required label::after {
+	color: var(--error-color);
+	content: '* required';
+	font-size: calc(1em - 3px);
+}
+
+input:valid + div.output > output.input-error,
+textarea:valid + div.output > output.input-error {
+	visibility: hidden;
+}
+
+input:user-invalid + div.output > output.input-error,
+textarea:user-invalid + div.output > output.input-error {
+	visibility: visible;
+}

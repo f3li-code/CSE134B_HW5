@@ -1,67 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Fangzhong Li's Resume</title>
+		<script>
+			const paintCanvas = () => {
+				let canvas = document.getElementById('myCanvas');
+				const canvasWidth = canvas.width;
+				const canvasHeight = canvas.height;
+				let ctx = canvas.getContext('2d');
+				ctx.fillStyle = '#FF0000';
+				ctx.fillRect(0, 0, canvasWidth, canvasHeight);
+			};
+			window.onload = paintCanvas;
+		</script>
+		<link rel="stylesheet" href="./Styles/styles.css" />
+		<link rel="stylesheet" href="./Styles/experience.css" />
+	</head>
 
-<head>
-    <meta charset="UTF-8">
-    <title>Fangzhong Li's Resume</title>
-    <script>
-        const paintCanvas = () => {
-            let canvas = document.getElementById("myCanvas");
-            const canvasWidth = canvas.width;
-            const canvasHeight = canvas.height;
-            let ctx = canvas.getContext("2d");
-            ctx.fillStyle = "#FF0000";
-            ctx.fillRect(0, 0, canvasWidth, canvasHeight);
-        };
-        window.onload = paintCanvas;
-    </script>
-    <link rel="stylesheet" href="./Styles/styles.css">
-    <link rel="stylesheet" href="./Styles/experience.css">
-</head>
+	<body>
+		<header id="stickyHeader">
+			<div id="navbar">
+				<h2>
+					<a href="./index.html">Fangzhong Li HW 4 CSE134B FA23</a>
+				</h2>
+				<nav>
+					<ul>
+						<li><a href="./index.html">HOME</a></li>
+						<li><a href="./form-no-js.html">Form no JS</a></li>
+						<li><a href="./form-js.html">Form with JS</a></li>
+						<li><a href="./projects.html">PROJECTS</a></li>
+						<!-- <li><a href="./design.html">design (not a real part of the site)</a></li> -->
+					</ul>
+				</nav>
+			</div>
+		</header>
+		<main>
+			<h1>Work Experience Page</h1>
+			<section>
+				<h2>This is a canvas</h2>
+				<canvas id="myCanvas">
+					Your browser does not support the canvas tag.
+				</canvas>
+			</section>
 
-<body>
-    <header id="stickyHeader">
-        <div id="navbar">
-            <h2><a href="./index.html">Fangzhong Li HW 3 CSE134B FA23</a></h2>
-        <nav>
-            <ul>
-                <li><a href="./index.html">HOME</a></li>
-                <li><a href="./education.html">EDUCATION</a></li>
-                <li><a href="./experience.html">WORK EXPERIENCE</a></li>
-                <li><a href="./projects.html">PROJECTS</a></li>
-                <!-- <li><a href="./design.html">design (not a real part of the site)</a></li> -->
-            </ul>
-        </nav>
-        </div>
-    </header>
-    <main>
-        <h1>Work Experience Page</h1>
-        <section>
-            <h2>This is a canvas</h2>
-            <canvas id="myCanvas">
-                Your browser does not support the canvas tag.
-            </canvas>
-        </section>
+			<div id="MathML">
+				<p>
+					I am selected to have a border because I have a
+					<span>span</span> child
+				</p>
+				<p>I have cool background color :></p>
+				<p>Hover Me to see another cool color</p>
 
-        
-        <div id="MathML">
-            <p>I am selected to have a border because I have a <span>span</span> child</p>
-            <p>I have cool background color :></p>
-            <p>Hover Me to see another cool color</p>
-            
-            <math display="block">
-                <mrow>
-                    <mi>E</mi>
-                    <mo>=</mo>
-                    <mi>m</mi>
-                    <msup>
-                        <mi>c</mi>
-                        <mn>2</mn>
-                    </msup>
-                </mrow>
-            </math>
-        </div>
-    </main>
-</body>
-
+				<math display="block">
+					<mrow>
+						<mi>E</mi>
+						<mo>=</mo>
+						<mi>m</mi>
+						<msup>
+							<mi>c</mi>
+							<mn>2</mn>
+						</msup>
+					</mrow>
+				</math>
+			</div>
+		</main>
+	</body>
 </html>
