@@ -126,7 +126,7 @@ The former. When they click submit, instead of sending form data, (or in additio
 */
 
 const toggleButton = document.createElement('button');
-
+toggleButton.innerHTML = '☀️';
 const setTheme = (theme) => {
 	const root = document.documentElement;
 	if (theme === 'dark') {
