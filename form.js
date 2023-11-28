@@ -99,7 +99,7 @@ const formErrorsInput = document.getElementById('form-errors');
 
 const submitButton = document.getElementById('submit');
 const collectFormErrors = (e) => {
-	console.log('collect errors');
+	// console.log('collect errors');
 	if (textArea.validity.valueMissing) {
 		formErrors.push({ Error: 'comments', Type: 'Empty' });
 	}
@@ -144,7 +144,7 @@ const setTheme = (theme) => {
 	}
 	localStorage.setItem('theme', theme);
 	savedTheme = theme;
-	console.log('saving theme');
+	// console.log('saving theme');
 };
 
 let savedTheme = localStorage.getItem('theme');
@@ -161,5 +161,5 @@ const toggleTheme = () => {
 
 toggleButton.addEventListener('click', toggleTheme);
 let pageHeading = document.querySelector('h1');
-console.log({ pageHeading });
+// console.log({ pageHeading });
 pageHeading.parentNode.insertBefore(toggleButton, pageHeading.nextSibling);
