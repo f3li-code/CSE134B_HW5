@@ -23,7 +23,8 @@ const textAreaErrorOutput = errorOutputs[errorOutputs.length - 1];
 const textAreaInfoOutput = infoOutputs[infoOutputs.length - 1];
 const textArea = document.getElementById('comments');
 
-const flashTextAreaErrorMsg = () => {
+const flashTextAreaErrorMsg = (errorMsg) => {
+	textAreaErrorOutput.innerHTML = errorMsg;
 	textAreaErrorOutput.style.visibility = 'visible';
 	textAreaErrorOutput.classList.add('flash-error');
 	const timeout = setTimeout(() => {
@@ -31,25 +32,26 @@ const flashTextAreaErrorMsg = () => {
 		textAreaErrorOutput.style.visibility = 'hidden';
 	}, 3000);
 };
-const checkTextArea = (e) => {
+
+const checkForError = (e) => {
 	let input = e.target.value;
 	if (
 		(comments.length == MAX_LEN && input.length >= comments.length) ||
 		input.length >= MAX_LEN + 1
 	) {
-		flashTextAreaErrorMsg();
+		flashTextAreaErrorMsg(ERROR_MAX_LEN);
 		// textArea.setCustomValidity(ERROR_MAX_LEN);
 		e.target.value = comments;
 		return;
 	}
 	if (textArea.validity.valueMissing) {
-		flashTextAreaErrorMsg();
+		flashTextAreaErrorMsg(ERROR_BLANK);
 		textArea.setCustomValidity(ERROR_BLANK);
 		textAreaInfoOutput.innerHTML =
 			'Characters Left: ' + (MAX_LEN - input.length);
 		return;
 	} else if (!/^[^#$%&()*+\/;<=>@[\\\]^_`{|}~]+$/.test(input)) {
-		flashTextAreaErrorMsg();
+		flashTextAreaErrorMsg(ERROR_INVALID_CHAR);
 		e.target.value = comments;
 		// console.log(ERROR_INVALID_CHAR);
 		return;
@@ -57,6 +59,10 @@ const checkTextArea = (e) => {
 		textArea.setCustomValidity('');
 	}
 	comments = input;
+};
+
+const updateInfoMsg = (e) => {
+	let input = e.target.value;
 	textAreaInfoOutput.innerHTML =
 		'Characters Left: ' + (MAX_LEN - input.length);
 	if (input.length == MAX_LEN) {
@@ -66,6 +72,10 @@ const checkTextArea = (e) => {
 	} else if (MAX_LEN - input.length <= LIM_NUM) {
 		textAreaInfoOutput.classList.add('warning');
 	}
+};
+const checkTextArea = (e) => {
+	checkForError(e);
+	updateInfoMsg(e);
 };
 textArea.addEventListener('input', checkTextArea);
 

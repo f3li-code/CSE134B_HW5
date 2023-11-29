@@ -5,7 +5,8 @@
 		<title>Fangzhong Li's Resume</title>
 		<link rel="stylesheet" href="./Styles/styles.css" />
 		<link rel="stylesheet" href="./Styles/form-js.css" />
-		<script src="form.js" async></script>
+		<script src="form.js" defer></script>
+		<script src="color-picker.js" defer></script>
 	</head>
 	<body>
 		<header id="stickyHeader">
@@ -89,6 +90,61 @@
 				<input type="hidden" id="form-errors" name="errors" value="" />
 				<button type="submit" id="submit">Submit</button>
 			</form>
+
+			<template id="color-picker-template">
+				<div>
+					<div style="margin-top: 2rem;">
+						<label for="theme-picker">Custom Theme: </label>
+						<select id="theme-picker">
+					</div>
+					
+						<!-- <option value=""></option> -->
+					</select>
+					<form id="theme-form">
+						<fieldset>
+							<div class="form-input">
+								<label for="theme-name">Name: </label>
+								<input id="theme-name" type="text" required />
+							</div>
+							<div class="form-input">
+								<label for="font-family" id="font-family-label"
+									>Font:
+								</label>
+								<select id="font-family">
+									<option value="Verdana, sans-serif">
+										Verdana
+									</option>
+									<option value="Arial, sans-serif">
+										Arial
+									</option>
+									<option value="'Trebuchet MS', sans-serif">
+										Trebuchet MS
+									</option>
+									<option value="Georgia, serif">
+										Georgia
+									</option>
+									<option value="'Courier New', monospace">
+										Courier New
+									</option>
+								</select>
+							</div>
+						</fieldset>
+						<fieldset>
+							<div class="form-input">
+								<label for="text-color">text color: </label>
+								<input id="text-color" type="color" />
+							</div>
+							<div class="form-input">
+								<label for="background-color"
+									>background color:
+								</label>
+								<input id="background-color" type="color" />
+							</div>
+						</fieldset>
+						<button id="add-button">Save to Theme List</button>
+					</form>
+				</div>
+			</template>
 		</main>
 	</body>
 </html>
