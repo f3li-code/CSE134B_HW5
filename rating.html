@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Fangzhong Li's Resume</title>
+		<link rel="stylesheet" href="./Styles/styles.css" />
+		<script src="./rating.js" async></script>
+	</head>
+	<body>
+		<header id="stickyHeader">
+			<div id="navbar">
+				<h2>
+					<a href="./index.html">Fangzhong Li HW 5 CSE134B FA23</a>
+				</h2>
+				<nav>
+					<ul>
+						<li><a href="./index.html">HOME</a></li>
+						<li><a href="./rating.html">HW 5 RATING</a></li>
+						<li><a href="./weather.html">HW 5 WEATHER</a></li>
+						<li><a href="./projects.html">PROJECTS</a></li>
+						<!-- <li><a href="./design.html">design (not a real part of the site)</a></li> -->
+					</ul>
+				</nav>
+			</div>
+		</header>
+		<main>
+			<h1>Rating Widget</h1>
+
+			<rating-widget>
+				<form action="https://httpbin.org/post" method="post">
+					<label for="rating">How satisfied are you?</label>
+					<input
+						type="hidden"
+						name="question"
+						value="How satisfied are you?"
+					/>
+					<input
+						type="hidden"
+						id="sentBy"
+						name="sentBy"
+						value="HTML"
+					/>
+					<input
+						type="number"
+						id="rating"
+						name="rating"
+						min="1"
+						max="5"
+						value="0"
+						required
+					/>
+
+					<button type="submit">Submit</button>
+				</form>
+			</rating-widget>
+		</main>
+	</body>
+</html>
