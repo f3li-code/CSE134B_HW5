@@ -102,12 +102,14 @@ class CurrentWeather extends HTMLElement {
 		this.timeDisp.textContent = formattedTime;
 
 		if (minutes == '00' && seconds == '00') {
+			// if (seconds == '00') {
 			this.updateCurrentWeather();
 		}
 		currentTime = null;
 	};
 
 	updateCurrentWeather = () => {
+		console.log('updating weather :)');
 		// if no more data to be displayed, make a new request
 		if (this.currInd == this.weeklyWeatherDataArr.length) {
 			this.sendRequest();
@@ -131,9 +133,11 @@ class CurrentWeather extends HTMLElement {
 			icon,
 		});
 
-		if (this.img.src != icon) {
+		let iconSrc = icon.replace(',0', '');
+		if (this.img.src !== iconSrc) {
 			// when the icon is the same as the previously displayed one, dont fetch another
-			this.img.src = icon;
+			this.img.src = iconSrc;
+			// this.img.src = 'https://api.weather.gov/icons/land/day/bkn,0?size=small';
 		}
 		// reveal the img when it is ready to be displayed
 		this.img.style.visibility = 'unset';
