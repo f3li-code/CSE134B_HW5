@@ -1,7 +1,6 @@
 class CurrentWeather extends HTMLElement {
 	constructor() {
 		super();
-
 		// results of API call stored here
 		this.weeklyWeatherDataArr = [];
 		// which hour of weather data to display
@@ -76,6 +75,16 @@ class CurrentWeather extends HTMLElement {
 			const resJson = await res.json();
 			console.log({ resJson });
 
+			// const forecasts = {};
+			// for (let i = 0; i < resJson.properties.periods.length; i++) {
+			// 	let key = `${resJson.properties.periods[i].shortForecast} ${
+			// 		resJson.properties.periods[i].isDaytime ? 'day' : 'night'
+			// 	}`;
+			// 	forecasts[key] = resJson.properties.periods[i].icon;
+			// 	// forecasts.add(resJson.properties.periods[i].icon);
+			// }
+			// console.log({ forecasts });
+
 			this.weeklyWeatherDataArr = resJson.properties.periods;
 			this.currInd = 0;
 			this.updateCurrentWeather();
@@ -109,7 +118,6 @@ class CurrentWeather extends HTMLElement {
 	};
 
 	updateCurrentWeather = () => {
-		console.log('updating weather :)');
 		// if no more data to be displayed, make a new request
 		if (this.currInd == this.weeklyWeatherDataArr.length) {
 			this.sendRequest();
@@ -122,33 +130,31 @@ class CurrentWeather extends HTMLElement {
 			temperatureUnit,
 			windSpeed,
 			windDirection,
-			icon,
+			// icon,
+			isDaytime,
 		} = currWeatherData;
-		console.log({
-			shortForecast,
-			temperature,
-			temperatureUnit,
-			windSpeed,
-			windDirection,
-			icon,
-		});
+		// console.log({
+		// 	shortForecast,
+		// 	temperature,
+		// 	temperatureUnit,
+		// 	windSpeed,
+		// 	windDirection,
+		// });
 
-		let iconSrc = icon.replace(',0', '');
-		if (this.img.src !== iconSrc) {
-			// when the icon is the same as the previously displayed one, dont fetch another
-			this.img.src = iconSrc;
-			// this.img.src = 'https://api.weather.gov/icons/land/day/bkn,0?size=small';
-		}
+		let iconSrc = `./Assets/weatherIcons/${shortForecast
+			.toLowerCase()
+			.replace(' ', '_')}_${isDaytime ? 'day' : 'night'}.png`;
+		// console.log({ iconSrc });
+		this.img.src = iconSrc;
 		// reveal the img when it is ready to be displayed
 		this.img.style.visibility = 'unset';
-
-		this.tempDisp.classList.add('fade');
-		this.windDisp.classList.add('fade');
+		this.tempDisp.classList.add('flash');
+		this.windDisp.classList.add('flash');
+		this.tempDisp.innerHTML = `${shortForecast}, ${temperature}&deg;${temperatureUnit}`;
+		this.windDisp.innerHTML = `wind: ${windSpeed} ${windDirection}`;
 		this.flashTimeout = setTimeout(() => {
-			this.tempDisp.innerHTML = `${shortForecast}, ${temperature}&deg;${temperatureUnit}`;
-			this.windDisp.innerHTML = `wind: ${windSpeed} ${windDirection}`;
-			this.tempDisp.classList.remove('fade');
-			this.windDisp.classList.remove('fade');
+			this.tempDisp.classList.remove('flash');
+			this.windDisp.classList.remove('flash');
 		}, 3000);
 	};
 
@@ -184,6 +190,9 @@ class CurrentWeather extends HTMLElement {
                 
                 animation: fadeOut 3s ease-in-out;
             }
+			.flash {
+				animation: fadeIn 1.5s ease-in-out;
+			}
 
             @keyFrames fadeOut {
                 0% {
@@ -196,6 +205,15 @@ class CurrentWeather extends HTMLElement {
                     opacity: 0;
                 }
             }
+
+			@keyFrames fadeIn {
+				0% {
+					opacity: 0%;
+				}
+				100% {
+					opacity: 100%;
+				}
+			}
         `;
 		return styles;
 	};
