@@ -1,6 +1,4 @@
 class RatingWidget extends HTMLElement {
-	static observedAttributes = ['data-stars'];
-
 	constructor() {
 		super();
 
@@ -13,13 +11,13 @@ class RatingWidget extends HTMLElement {
 		this.feedBackMsg.textContent = 'placeholder';
 		this.feedBackMsg.classList.add('invis');
 		this.MIN_RATING = 1;
-		this.MAX_RATING = document.getElementById('rating').max;
+		this.MAX_RATING = +document.getElementById('rating').max;
 		this.formFields = {
 			question: 'How satisfied are you?',
 			rating: 0,
 			sentBy: 'JS',
 		};
-		console.log('constructor ran');
+		// console.log('constructor ran');
 	}
 	connectedCallback() {
 		// console.log({ starNodes: this.starNodes });
@@ -40,14 +38,14 @@ class RatingWidget extends HTMLElement {
 		// console.log('element added to DOM');
 	}
 
-	attributeChangedCallback(name, oldValue, newValue) {
-		console.log(
-			`Attribute ${name} has changed from ${oldValue} to ${newValue}.`
-		);
-		if (name === 'data-stars') {
-			this.createStars(newValue);
-		}
-	}
+	// attributeChangedCallback(name, oldValue, newValue) {
+	// 	console.log(
+	// 		`Attribute ${name} has changed from ${oldValue} to ${newValue}.`
+	// 	);
+	// 	if (name === 'data-stars') {
+	// 		this.createStars(newValue);
+	// 	}
+	// }
 
 	disconnectedCallback = () => {
 		clearTimeout(this.timeOut);
@@ -67,6 +65,7 @@ class RatingWidget extends HTMLElement {
 			// add listener on mouseover
 			starNode.addEventListener('mouseover', (e) => {
 				this.formFields.rating = starNode.id;
+				// console.log({ rating: this.formFields.rating });
 				for (let i = 0; i < starNode.id; i++) {
 					this.starNodes[i].classList.add('hovered');
 				}
@@ -83,9 +82,11 @@ class RatingWidget extends HTMLElement {
 	};
 
 	submitForm = async () => {
+		// console.log(this.formFields.rating);
+
 		if (
-			this.formFields.rating < this.MIN_RATING ||
-			this.formFields.rating > this.MAX_RATING
+			+this.formFields.rating < this.MIN_RATING ||
+			+this.formFields.rating > this.MAX_RATING
 		) {
 			this.errorMsg.textContent = 'Oops... Please Select Your Rating :)';
 			this.errorMsg.classList.add('error');
@@ -95,7 +96,7 @@ class RatingWidget extends HTMLElement {
 			return;
 		}
 
-		if (this.formFields.rating >= this.MAX_RATING * 0.8) {
+		if (+this.formFields.rating >= this.MAX_RATING * 0.8) {
 			this.feedBackMsg.textContent = `Thanks for the ${this.formFields.rating}-star rating!`;
 		} else {
 			this.feedBackMsg.textContent = `Thanks for a rating of ${
@@ -104,6 +105,7 @@ class RatingWidget extends HTMLElement {
 				this.formFields.rating > 1 ? 's' : ''
 			}. We will try to do better!`;
 		}
+		this.feedBackMsg.classList.remove('feedback');
 		this.feedBackMsg.classList.add('feedback');
 		this.timeOut = setTimeout(() => {
 			this.feedBackMsg.classList.remove('feedback');
